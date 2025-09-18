@@ -6,8 +6,10 @@
 
 ## 概要
 
-MesignSparkMechanicalのフリーユーザーがでMISUMIのMeviyを利用される際の作業に関係があるかもしれないツール  
-みなさま何故かD&Dされてx_bファイルにされてからMISUMIのMeviyに向かっていますね  
+MesignSparkMechanicalのフリーユーザーが  
+MISUMIのMeviyを利用される際の作業に関係があるかもしれないツール  
+みなさまD&Dされてx_bファイルにされてから  
+MISUMIのMeviyに向かっていますね  
 
 ---
 
