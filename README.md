@@ -1,6 +1,6 @@
 # rsdocx Converter
 
-![thumbnail](https://github.com/user-attachments/assets/86475281-d11b-4305-a624-b4854523aaed)
+![thumbnail](https://github.com/user-attachments/assets/4f9d94d4-dd16-4551-90e1-e52735706b4f)
 
 ---
 
