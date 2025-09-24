@@ -10,7 +10,8 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 </head>
 <body class="bg-gradient-to-br from-indigo-400 to-purple-600 min-h-screen p-6 font-sans">
-  <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+  <!-- 全幅レイアウトに変更。paddingはbodyで調整、containerはmax-w-screen-2xlで広め -->
+  <div class="mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden max-w-screen-2xl p-0">
     <div class="bg-gradient-to-br from-gray-800 to-gray-700 text-white p-8 text-center">
       <h1 class="text-4xl font-light mb-2">📦 rsdocx Extractor</h1>
       <p>DesignSpark Mechanicalファイルから3Dジオメトリを抽出するWebApp</p>
@@ -32,7 +33,8 @@
         <div id="downloadArea"></div>
         <div id="status"></div>
         <h3 class="font-semibold text-lg mb-4">一覧表示:</h3>
-        <div id="fileItems"></div>
+        <!-- md以上で2列、さらに大きい画面なら3列も可 -->
+        <div id="fileItems" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
       </div>
     </div>
   </div>
@@ -198,7 +200,7 @@
         const icon = isXbFile ? '🔧' : '📄';
         const fileType = isXbFile ? 'Parasolid 3D' : extension.toUpperCase();
 
-        // Tailwindカード
+        // Tailwindカード（3D File表示は削除済み）
         const fileItem = document.createElement('div');
         fileItem.className = "flex justify-between items-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-indigo-400 mb-3 relative";
         fileItem.innerHTML = `
@@ -212,17 +214,7 @@
           </div>
           <span class="text-gray-600 text-sm">${sizeText}</span>
         `;
-        if (isXbFile) {
-          const thumbnail = document.createElement('div');
-          thumbnail.className = 'absolute top-3 right-24 w-20 h-14 rounded bg-white flex flex-col items-center justify-center border border-gray-300 text-gray-500 text-center';
-          thumbnail.innerHTML = `
-            <div class="text-xl mb-1">📐</div>
-            <div class="text-xs">3D File</div>
-          `;
-          thumbnail.title = `${file.name}\n3D Parasolidファイル`;
-          fileItem.style.paddingRight = '110px';
-          fileItem.appendChild(thumbnail);
-        }
+        // 「3D File」表示は削除（thumbnail部分も削除）
         fileItems.appendChild(fileItem);
       });
     }
